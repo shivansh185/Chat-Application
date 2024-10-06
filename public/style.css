@@ -1,0 +1,227 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Name input styling */
+.name-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.name-container input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 70%;
+}
+
+.name-container button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.name-container button:hover {
+    background-color: #3e8e41;
+}
+
+/* Chat window and input area styling */
+.chat-window {
+    padding: 20px;
+    height: 300px;
+    overflow-y: auto; /* Add scrollbar for long messages */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden until user enters chat */
+}
+
+.input-container {
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    display: none; /* Hidden until user enters chat */
+}
+
+.input-box {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex; /* Flexbox for better layout */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-box input[type="file"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 75%;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-box input[type="file"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+input[type="text"] {
+    width: 75%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+button[type="submit"] {
+    width: 23%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button[type="submit"]:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+/* Sent and received messages styling */
+/* Chat window message styling */
+#messages p {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    word-wrap: break-word; /* Ensure long messages wrap within the container */
+}
+
+#messages p.sent {
+    align-self: flex-end;
+    background-color: #d1f7d1;
+}
+
+#messages p.received {
+    align-self: flex-start;
+    background-color: #f1f1f1;
+}
+
+/* Styling for images in chat */
+#messages img {
+    max-width: 100%; /* Ensure the image fits within the message container */
+    height: auto;
+    margin-top: 10px; /* Add some space between the text and the image */
+    border-radius: 5px; /* Optional: adds a slight round border to images */
+}
+
+
+.scrollable {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 250px;
+}
+
+/* File display */
+/* File display area */
+#file-display {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds spacing between each uploaded file */
+    max-width: 100%; /* Prevents files from exceeding the container width */
+}
+
+/* Individual file containers */
+#file-display div {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    max-width: 90%; /* Limit file container width */
+    margin: 0 auto; /* Center the file display within the chat window */
+}
+
+/* Images */
+#file-display img {
+    max-width: 100%; /* Image should not exceed the width of the container */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Ensure image is treated as a block element */
+    margin: 10px auto; /* Add some space around the image and center it */
+}
+
+/* File download link */
+#file-display a {
+    display: block;
+    margin-top: 10px;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+#file-display a:hover {
+    text-decoration: underline;
+}
+
+
+/* Visually hidden class for accessibility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chat App</h1>
+        </header>
+        <main>
+            <!-- New: User name input -->
+            <div class="name-container">
+                <label for="username" class="visually-hidden">Name:</label>
+                <input type="text" id="username" placeholder="Enter your name">
+                <button id="enter-chat" disabled>Enter Chat</button>
+            </div>
+
+            <!-- Chat window and input area -->
+            <div class="chat-window" style="display: none;"> <!-- Initially hidden -->
+                <div id="messages" class="scrollable"></div>
+                <div id="file-display"></div>
+            </div>
+            <div class="input-container" style="display: none;"> <!-- Initially hidden -->
+                <div class="input-box">
+                    <input type="text" id="textmessage" placeholder="Enter message">
+                    
+                    <input type="file" id="fileinput" multiple aria-label="Select files to upload">
+                    <button type="submit" id="Submitbutton" disabled>Send</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
